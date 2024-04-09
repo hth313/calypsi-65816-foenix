@@ -310,12 +310,12 @@ struct _Vicky {
   uint8_t   reserved_01;
   union {                     // Border control
     struct {
-      uint8_t enableBorder           : 1;
+      uint8_t enable                 : 1;
       uint8_t                        : 3;
-      uint8_t borderOffset           : 3;      // 0..7 scroll offset X
+      uint8_t scroll_x               : 3;      // 0..7 scroll offset X
     };
-    uint8_t   borderControl;  // combined border control bits
-  };
+    uint8_t   control;                         // combined border control bits
+  } border;
   color24_t border_color;
   uint8_t   border_width;
   uint8_t   border_height;
