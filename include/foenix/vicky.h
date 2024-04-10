@@ -323,10 +323,12 @@ struct _Vicky {
   color24_t background_color;
   uint8_t   cursor_control;
   uint8_t   test_start;
-  char      cursor;
+  char      cursor_char;
   uint8_t   cursor_color;
-  uint16_t  cursorX;
-  uint16_t  cursorY;
+  struct {
+    uint32_t x:16;
+    uint32_t y:16;
+  } cursor;
   uint8_t   _line_interrupt_control[3];
   uint8_t   line_interrupt_control;  // bit 0 = line0, bit 1 = line1
   union {
