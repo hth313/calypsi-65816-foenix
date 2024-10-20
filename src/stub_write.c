@@ -26,8 +26,7 @@ size_t _Stub_write (int fd, const void *buf, size_t count) {
     break;
     }
   default:
-    __set_errno(EBADF);
-    return (size_t) -1;
+    return -EBADF;
   }
   return n;
 }
